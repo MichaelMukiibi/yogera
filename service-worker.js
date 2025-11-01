@@ -3,7 +3,8 @@ const CACHE_NAME = 'gemma-llm-model-v1'
 
 // ASSET PATH
 const MODEL_FILE = 'ganda-gemma-1b-instruct' 
-const MODEL_ASSET_PATH = `./${MODEL_FILE}.task`
+const MODEL_ASSET_PATH = `./assets/${MODEL_FILE}.task`
+const WASM_ASSET_PATH = './assets/mediapipe-wasm'
 
 // FILES TO PRECACHE
 const URLS = [
@@ -11,7 +12,7 @@ const URLS = [
     'index.html',
     'main.js',
     MODEL_ASSET_PATH,
-    '/wasm/llm_inference_api.wasm',
+    WASM_ASSET_PATH,
 ]
 
 // 1. INSTALLATION

@@ -2,7 +2,8 @@
 import { LlmInference, FilesetResolver } from "@mediapipe/tasks-genai";
 
 const MODEL_FILE = 'ganda-gemma-1b-instruct'
-const MODEL_ASSET_PATH = `./${MODEL_FILE}.task`
+const MODEL_ASSET_PATH = `./assets/${MODEL_FILE}.task`
+const WASM_ASSET_PATH = `./assets/mediapipe-wasm`
 const outputElement = document.getElementById('output')
 
 // Register Service Worker first
@@ -26,14 +27,13 @@ async function runModel() {
 
     try {
         // Locate WASM and Worker files using FilesetResolver
-        const fileset = await FilesetResolver.forLlmTask()
+        const fileset = await FilesetResolver.forGenAiTasks(WASM_ASSET_PATH)
 
         // Inference object
-        const llmInference = new LlmInference(fileset)
-
-        // Initialize the model with the .task file
-        await llmInference.initialize({
-            modelAssetPath: MODEL_ASSET_PATH,
+        const llmInference = await LlmInference.createFromOptions(fileset, {
+            baseOptions: {
+                modelAssetPath: MODEL_ASSET_PATH,
+            },
 
             // Model configuration
             maxTokens: 1024,
