@@ -1,7 +1,8 @@
 // Register service worker and uses MediaPipe Library
 import { LlmInference, FilesetResolver } from "@mediapipe/tasks-genai";
 
-const MODEL_ASSET_PATH = './ganda-gemma-1b-litert-task'
+const MODEL_FILE = 'ganda-gemma-1b-instruct'
+const MODEL_ASSET_PATH = `./${MODEL_FILE}.task`
 const outputElement = document.getElementById('output')
 
 // Register Service Worker first

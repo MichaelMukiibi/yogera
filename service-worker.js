@@ -2,7 +2,8 @@
 const CACHE_NAME = 'gemma-llm-model-v1'
 
 // ASSET PATH
-const MODEL_ASSET_PATH = "./ganda-gemma-1b-litert.task"
+const MODEL_FILE = 'ganda-gemma-1b-instruct' 
+const MODEL_ASSET_PATH = `./${MODEL_FILE}.task`
 
 // FILES TO PRECACHE
 const URLS = [
