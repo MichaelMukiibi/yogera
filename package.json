@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "vite",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Michael Mukiibi",
   "license": "ISC",
   "packageManager": "pnpm@10.17.1",
   "dependencies": {
